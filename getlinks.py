@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import json
+from selenium.webdriver.common.by import By
 
 def main():
     chrome_options = Options()
@@ -9,7 +10,7 @@ def main():
     driver = webdriver.Chrome(options=chrome_options)
 
     driver.get("https://www.google.com/search?q=site:youtube.com+openinapp.co&num=100000")
-    links= driver.find_elements_by_tag_name('a')
+    links= driver.find_elements(By.TAG_NAME, 'a')
 
     newlinks=[]
     for lnk in links:

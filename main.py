@@ -3,6 +3,7 @@ import csv
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -44,7 +45,7 @@ def checklinks(video):
         channels_links.append(video)
     elif video.startswith("https://www.youtube.com/post"):
         driver.get(video)
-        element = driver.find_elements_by_tag_name("a")
+        element = driver.find_elements(By.TAG_NAME, 'a')
         for lnk in element:
             a= lnk.get_attribute("href")
             if type(a)==str:
