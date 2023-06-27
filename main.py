@@ -11,7 +11,7 @@ chrome_options.add_argument("--log-level=3")
 driver = webdriver.Chrome(options=chrome_options)
 
 
-API_KEY = "AIzaSyDD7JOGj70Nf2txus15XWymHDznpOTNWno"
+API_KEY = "SECRETAPI"
 
 def extract_channel_url(video_url):
     video_id = video_url.split("v=")[-1]
